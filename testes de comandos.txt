@@ -1,0 +1,61 @@
+from copy import copy
+from importlib.resources import read_text
+from tkinter import *
+from tkinter import messagebox
+from traceback import print_tb
+
+
+class galleti:
+    def __init__(self):
+
+        self.janela_principal = Tk()
+
+        self.botao = Button(self.janela_principal,
+         text='Clique aqui', command=self.sem_ideia)
+
+        self.botao.pack()
+
+        mainloop()
+
+    def sem_ideia(self):
+     messagebox.showinfo("working")
+
+gui = galleti()
+
+---
+
+
+from tkinter import *
+
+
+class Test(Text):
+    def __init__(self, master, **kw):
+        Text.__init__(self, master, **kw)
+        self.bind('<Control-c>', self.copy)
+        self.bind('<Control-x>', self.cut)
+        self.bind('<Control-v>', self.paste)
+
+    def copy(self, event=None):
+        self.clipboard_clear()
+        text = self.get("sel.first", "sel.last")
+        self.clipboard_append(text)
+
+    def cut(self, event):
+        self.copy()
+        self.delete("sel.first", "sel.last")
+
+    def paste(self, event):
+        text = self.selection_get(selection='CLIPBOARD')
+        self.insert('insert', text)
+
+
+def test():
+    r = Tk()
+    t = Test(r)
+    t.pack(fill='both', expand=1)
+    r.mainloop()
+
+
+if __name__ == '__main__':
+    test()
+=-============================

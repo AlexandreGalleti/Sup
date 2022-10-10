@@ -1,0 +1,22 @@
+from tkinter import *
+from tkinter import messagebox
+
+
+class galleti:
+    def __init__(self):
+
+        self.janela_principal = Tk()
+
+        self.botao = Button(self.janela_principal,
+                            text='Clique aqui', command=self.sem_ideia)
+
+        self.botao.pack()
+
+        mainloop()
+
+    def sem_ideia(self):
+        messagebox.showinfo('deu certo!')
+        
+
+gui = galleti()
+
