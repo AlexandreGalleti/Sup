@@ -1,8 +1,6 @@
-from asyncore import read
 from cgitb import text
 from sqlite3 import Row
 import tkinter as tk
-from turtle import color
 import clipboard
 from colorama import Fore
 import pyautogui
@@ -11,7 +9,7 @@ import time
 
 
 my_w = tk.Tk()
-my_w.geometry("352x350")
+my_w.geometry("300x350")
 my_w.title("atalho de suporte")
 global data
 
@@ -77,7 +75,9 @@ def chamado_select():
     pyautogui.hotkey('tab')
     pyautogui.hotkey('tab')
     pyautogui.hotkey('enter')
-    time.sleep(1)
+    time.sleep(2)
+    pyautogui.hotkey('tab')
+    pyautogui.hotkey('tab')
     pyautogui.hotkey('tab')
     pyautogui.hotkey('tab')
     pyautogui.hotkey('tab')
@@ -86,11 +86,19 @@ def chamado_select():
     pyautogui.hotkey('tab')
     pyautogui.hotkey('tab')
     pyautogui.hotkey('enter')
-    time.sleep(1)
+    time.sleep(2)
     pyautogui.hotkey('tab')
     pyautogui.hotkey('tab')
     pyautogui.hotkey('tab')
     pyautogui.hotkey('tab')
+    pyautogui.typewrite('hoje o cliente/a solicitou suporte')
+    pyautogui.hotkey('enter')
+    pyautogui.hotkey('enter')
+    pyautogui.typewrite('chamado feito pelo cliente/a:(mensagem do cliente)')
+    pyautogui.hotkey('enter')
+    pyautogui.hotkey('enter')
+    pyautogui.typewrite(
+        'o metodo ultilizado para a corrção do problema foi:(como foi resolvido)')
 
 
 b1 = tk.Button(my_w, text='Selecionar', command=lambda: select_all(),
