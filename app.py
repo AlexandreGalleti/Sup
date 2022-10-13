@@ -33,7 +33,7 @@ def whatsweb_select():
 def copy_select():
     global data
     pyautogui.hotkey('win')
-    pyautogui.typewrite('')
+    pyautogui.typewrite('AnyDask')
     pyautogui.hotkey('enter')
 
 
