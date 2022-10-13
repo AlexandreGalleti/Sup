@@ -1,4 +1,5 @@
 from cgitb import text
+from platform import python_branch
 from sqlite3 import Row
 import tkinter as tk
 import clipboard
@@ -9,7 +10,7 @@ import time
 
 
 my_w = tk.Tk()
-my_w.geometry("300x350")
+my_w.geometry("350x350")
 my_w.title("atalho de suporte")
 global data
 
@@ -32,7 +33,7 @@ def whatsweb_select():
 def copy_select():
     global data
     pyautogui.hotkey('win')
-    pyautogui.hotkey('a', 'n', 'y', 'd', 'e', 's', 'k')
+    pyautogui.typewrite('')
     pyautogui.hotkey('enter')
 
 
@@ -49,7 +50,7 @@ def paste_select():
 def team_select():
     global data
     pyautogui.hotkey('win')
-    pyautogui.hotkey('t', 'e', 'a', 'm', 'v', 'i', 'e', 'w', 'e', 'r')
+    pyautogui.typewrite('TeamViewer')
     pyautogui.hotkey('enter')
 
 
@@ -63,7 +64,7 @@ def visual_select():
 def whatsapp_select():
     global data
     pyautogui.hotkey('win')
-    pyautogui.hotkey('w', 'h', 'a', 't', 's', 'a', 'p', 'p')
+    pyautogui.typewrite('WhatsApp')
     pyautogui.hotkey('enter')
 
 
@@ -132,5 +133,6 @@ b7.grid(row=3, column=2, padx=2, pady=5,)
 b8 = tk.Button(my_w, text='Abrir chamado', command=lambda: chamado_select(),
                font=20, bg='cyan')
 b8.grid(row=5, column=2, padx=3, pady=5, )
+
 
 my_w.mainloop()
